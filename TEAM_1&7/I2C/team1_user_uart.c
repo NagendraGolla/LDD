@@ -62,7 +62,7 @@ int main() {
         if (bytes_read > 0) {
             count += bytes_read;  // Increment count for each byte read
         }
-        if (rx_buffer[count - 1] == '\n') { // Break loop when newline character is received
+        if (rx_buffer[count - 1] == '\0') { // Break loop when newline character is received
             break;
         }
     }
