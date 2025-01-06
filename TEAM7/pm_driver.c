@@ -161,7 +161,6 @@ static int adxl_probe(struct i2c_client *client)
         pr_err("Failed to activate runtime PM\n"); // Print error if failed
         return ret; // Return error code
     }
-    pm_suspend_ignore_children(&adxl_i2c_client->dev,1);
     pm_runtime_enable(&adxl_i2c_client->dev);                      // Enable runtime PM
     pm_runtime_set_autosuspend_delay(&adxl_i2c_client->dev,3000); // Set autosuspend delay (5s)
     pm_runtime_use_autosuspend(&adxl_i2c_client->dev);             // Enable autosuspend
